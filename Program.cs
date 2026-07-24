@@ -10,7 +10,14 @@ namespace TimedCapitalAutoTrader
         /// <summary>
         /// Static field containing the <see cref="ILoggerFactory"/> that is used to create <see cref="ILogger"/> instances for this application.
         /// </summary>
-        internal static ILoggerFactory ApplicationLoggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+        internal static ILoggerFactory ApplicationLoggerFactory = LoggerFactory.Create(builder =>{
+            builder.AddSimpleConsole(options =>
+            {
+                options.IncludeScopes = true;
+                options.SingleLine = true;              // Prints everything on 1 line per log
+                options.TimestampFormat = "HH:mm:ss ";  // Adds timestamps
+            });
+        });
 
         /// <summary>
         /// Static field containing whether trades should be executed in the live trading environment.

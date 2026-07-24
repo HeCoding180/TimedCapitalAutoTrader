@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CapitalAPI\" />
+  </ItemGroup>
+
 </Project>
